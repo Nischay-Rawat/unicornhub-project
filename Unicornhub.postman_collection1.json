@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"name\":\"Nischay Rawat\",\r\n\"email\":\"nischayrawat1@yopmail.com\",\r\n\"password\":\"123456\"\r\n}",
+							"raw": "{\"name\":\"gasoline Rawat\",\r\n\"email\":\"nischayrawat124@yopmail.com\",\r\n\"password\":\"123456\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -80,9 +80,34 @@
 			"item": [
 				{
 					"name": "Get All Post",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{POST_BASE}}",
+							"host": [
+								"{{POST_BASE}}"
+							]
+						}
 					},
 					"response": []
 				},
@@ -93,7 +118,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"user_id\":\"63ee6ac7b0488e013a78f38a\",\r\n    \"text\":\"hi this is oppo\"\r\n    }",
+							"raw": "{\r\n    \"user_id\":\"63ee6ac7b0488e013a78f38a\",\r\n    \"text\":\"Old armer\"\r\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -115,15 +140,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{POST_BASE}}?id=e63ee6de1038ae56fe9d72157",
+							"raw": "{{POST_BASE}}/63ef0deeeff78a9ffad6827e",
 							"host": [
 								"{{POST_BASE}}"
 							],
-							"query": [
-								{
-									"key": "id",
-									"value": "e63ee6de1038ae56fe9d72157"
-								}
+							"path": [
+								"63ef0deeeff78a9ffad6827e"
 							]
 						}
 					},
@@ -136,7 +158,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"post_id\":\"63ee6de1038ae56fe9d72157\",\r\n    \"user_id\":\"63ee6ac7b0488e013a78f38a\",\r\n    \"status\":\"1\"\r\n\r\n}",
+							"raw": "{\r\n    \"post_id\":\"63ef134d224597b7093bda6b\",\r\n    \"user_id\":\"63ee4995706998123ba35340\"\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -162,7 +184,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"post_id\":\"63ee6de1038ae56fe9d72157\",\r\n    \"user_id\":\"63eeefa14d1b6b0a97eb5189\",\r\n    \"status\":1\r\n\r\n}",
+							"raw": "{\r\n    \"post_id\":\"63ef134d224597b7093bda6b\",\r\n    \"user_id\":\"63ee4995706998123ba35340\"\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -170,12 +192,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{POST_BASE}}/like",
+							"raw": "{{POST_BASE}}/dislike",
 							"host": [
 								"{{POST_BASE}}"
 							],
 							"path": [
-								"like"
+								"dislike"
 							]
 						}
 					},
@@ -185,7 +207,16 @@
 					"name": "Treding Posts",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "{{POST_BASE}}/trending",
+							"host": [
+								"{{POST_BASE}}"
+							],
+							"path": [
+								"trending"
+							]
+						}
 					},
 					"response": []
 				}
