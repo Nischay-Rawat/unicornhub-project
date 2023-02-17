@@ -1,0 +1,242 @@
+{
+	"info": {
+		"_postman_id": "caec49a3-f4ed-495a-a057-87aa8a41f021",
+		"name": "Unicornhub",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Nischay Rawat\",\r\n\"email\":\"nischayrawat1@yopmail.com\",\r\n\"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_BASE}}",
+							"host": [
+								"{{USER_BASE}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"email\":\"nischayrawat1@yopmail.com\",\r\n\"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{AUTH_BASE}}",
+							"host": [
+								"{{AUTH_BASE}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All User List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4080/api/users",
+							"host": [
+								"localhost"
+							],
+							"port": "4080",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "Get All Post",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Create Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\":\"63ee6ac7b0488e013a78f38a\",\r\n    \"text\":\"hi this is oppo\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{POST_BASE}}",
+							"host": [
+								"{{POST_BASE}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Post By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{POST_BASE}}?id=e63ee6de1038ae56fe9d72157",
+							"host": [
+								"{{POST_BASE}}"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "e63ee6de1038ae56fe9d72157"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Like",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"post_id\":\"63ee6de1038ae56fe9d72157\",\r\n    \"user_id\":\"63ee6ac7b0488e013a78f38a\",\r\n    \"status\":\"1\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{POST_BASE}}/like",
+							"host": [
+								"{{POST_BASE}}"
+							],
+							"path": [
+								"like"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post DisLike",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"post_id\":\"63ee6de1038ae56fe9d72157\",\r\n    \"user_id\":\"63eeefa14d1b6b0a97eb5189\",\r\n    \"status\":1\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{POST_BASE}}/like",
+							"host": [
+								"{{POST_BASE}}"
+							],
+							"path": [
+								"like"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Treding Posts",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2VlNmFjN2IwNDg4ZTAxM2E3OGYzOGEiLCJpYXQiOjE2NzY2MDMxODl9.i9sOUEHfSjHgzTiidgdlnfnia7Ovvkv3MIBGDb9WAUs",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "POST_BASE",
+			"value": "localhost:4080/api/posts",
+			"type": "default"
+		},
+		{
+			"key": "USER_BASE",
+			"value": "localhost:4080/api/users",
+			"type": "default"
+		},
+		{
+			"key": "AUTH_BASE",
+			"value": "localhost:4080/api/auth",
+			"type": "default"
+		}
+	]
+}
